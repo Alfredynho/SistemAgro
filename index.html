@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<!--Agregando Hojas de estilo-->
+<link rel="stylesheet" href="style.css">
+<center><h2> Sistema de Gestion y Control Agronomia UMSA</h2></center>
+	<title>Prueba sensor</title>
+  <!--Agregando librerias -->
+	<script type="text/javascript" src="./js/jquery-2.1.4.min.js"></script>
+	<script type="text/javascript" src="./js/ajaxq.js"></script>
+	<script type="text/javascript" src="./js/arest.js"></script>
+	<script type="text/javascript" src="script.js"></script>
+</head>
+
+<body>
+	<div>
+		<!-- Asignando un campo para la IP-->
+		<input id='device_address' type="text" name="fname">
+		<!-- Agregando un Boton para validar la IP-->
+		<button id='validate' type="button">Validar Pin</button>
+	</div>
+
+	<div>Digital pin 8: </div>
+
+	<div>
+		<button id='on' type="button">On</button>
+	</div>
+
+	<div>
+		<button id='off' type="button">Off</button>
+	</div>
+
+    <div> 
+    	<button id='on1' type="button">on1</button>
+    </div>
+
+    <div> 
+    	<button id='off1' type="button">off1</button>
+    </div>   
+    <div class='row'>
+  
+  <div id='label' class="col-md-2">PWM pin 6: </div>
+  <div class="col-md-4">
+    <input id='slider' type="range" value="0" max="255" min="0" step="5">
+  </div>
+</div>
+
+<div class='row'>
+
+  <div class="col-md-3">Analog pin A0: 
+    <span id='A0'></span>
+  </div>
+
+
+  <div class="col-md-3">Digital pin 2: 
+    <span id='2'></span>
+  </div>
+
+</div>
+
+<div class='row'>
+
+  <div class="col-md-2">Temperature: 
+    <span id='temperature'></span>
+  </div>
+
+  <div class="col-md-2">Humidity: 
+    <span id='humidity'></span>
+  </div>
+</div>
+
+</div>
+</body>
+</html>
