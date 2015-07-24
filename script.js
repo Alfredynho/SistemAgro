@@ -1,11 +1,11 @@
 $( document ).ready(function() {
 
-  // Create new aREST device when button is clicked
+  // Crear nuevo dispositivo Arest cuando se hace clic en el botón
   $('#validate').click(function() {
     var address = $('#device_address').val();
     var device = new Device(address);
 
-    // Set device pins
+    // Pines conjunto de dispositivos
     device.pinMode(2, "INPUT");
     device.pinMode(3, "OUTPUT");
     device.pinMode(4,"OUTPUT");
@@ -14,7 +14,7 @@ $( document ).ready(function() {
     device.pinMode(7,"OUTPUT");
     device.pinMode(8,"OUTPUT");
     device.pinMode(9, "OUTPUT");
-    // Button
+    // Botones
     $('#on').click(function() {
       device.digitalWrite(8, 1);
       device.digitalWrite(3, 1);
@@ -40,13 +40,13 @@ $( document ).ready(function() {
       device.digitalWrite(7,0);
       });
 
-    // Analog write
+    // escritura analógica
     $('#slider').mouseup(function() {
       var val = $('#slider').val();
       device.analogWrite(6, val);
     });
 
-    //Analog read every 5 seconds
+    //Analog leer cada 5 segundos
     device.analogRead(0, function(data) {
       $("#A0").html(data.return_value);
     });
@@ -56,7 +56,7 @@ $( document ).ready(function() {
       });
     }, 5000);
 
-    // Digital read every 5 seconds
+    // Digital leer cada 5 segundos
     device.digitalRead(11, function(data) {
       $('#2').html(data.return_value);
     });  
@@ -66,12 +66,12 @@ $( document ).ready(function() {
       });
     }, 5000);
 
-    // Temperature display
+    // exhibición de la temperatura
     device.getVariable('temperature', function(data) {
       $('#temperature').html(data.temperature);
     });
 
-    // Humidity display
+    // pantalla Humedad
     device.getVariable('humidity', function(data) {
       $('#humidity').html(data.humidity);
     });

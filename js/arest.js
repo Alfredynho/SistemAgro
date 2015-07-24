@@ -1,4 +1,4 @@
-// Device definition
+// Definicion de Dispositivo
 function Device(address) {
   this.address = address;
 
