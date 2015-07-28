@@ -1,8 +1,9 @@
 $( document ).ready(function() {
 
   // Crear nuevo dispositivo Arest cuando se hace clic en el botón
+
   $('#validate').click(function() {
-    var address = $('#device_address').val();
+    var address = '192.168.1.12';
     var device = new Device(address);
 
     // Pines conjunto de dispositivos
