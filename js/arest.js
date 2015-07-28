@@ -1,4 +1,5 @@
 // Definicion de Dispositivo
+var url = 'http://192.168.1.12:80';
 function Device(address) {
   this.address = address;
 

@@ -6,6 +6,7 @@ $( document ).ready(function() {
     var device = new Device(address);
 
     // Pines conjunto de dispositivos
+    // declarando como salida o como entrada
     device.pinMode(2, "INPUT");
     device.pinMode(3, "OUTPUT");
     device.pinMode(4,"OUTPUT");
@@ -32,19 +33,31 @@ $( document ).ready(function() {
     });
 
     // Para el boton en el pin 5
+    // funciones con el evento click
     $('#on1').click(function(){
       device.digitalWrite(7,1);
       });
+    setInterval(function() {
+      device.analogRead(0, function(data) {
+        $("#on1").html(data.return_value);
+      });
+    }, 5000);
 
         $('#off1').click(function(){
       device.digitalWrite(7,0);
       });
+        setInterval(function() {
+      device.analogRead(0, function(data) {
+        $("#off1").html(data.return_value);
+      });
+    }, 5000);
 
     // escritura analógica
     $('#slider').mouseup(function() {
       var val = $('#slider').val();
       device.analogWrite(6, val);
     });
+
 
     //Analog leer cada 5 segundos
     device.analogRead(0, function(data) {
