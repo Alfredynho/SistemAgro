@@ -1,7 +1,7 @@
 $( document ).ready(function() {
 
   // Crear nuevo dispositivo Arest cuando se hace clic en el botón
-
+// la IP asignada es la de 192.168.1.12
   $('#validate').click(function() {
     var address = '192.168.1.12';
     var device = new Device(address);
